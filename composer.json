@@ -1,0 +1,26 @@
+{
+    "name": "davidumoh/module-auth0-sso",
+    "description": "This is an extension that adds the ability to log into your Magento application using Auth0",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0"
+    ],
+    "authors":[
+        {
+            "name":"David Umoh",
+            "email":"umohdavid@gmail.com"
+        }
+    ],
+    "require": {
+        "riskio/oauth2-auth0": "^0.1.0",
+        "gloo/module-sso": "@dev"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "DavidUmoh\\Auth0SSO\\": ""
+        }
+    }
+}
