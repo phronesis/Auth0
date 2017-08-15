@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="auth0_sso_config" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Auth0 SSO</label>
+            <tab>gloo_sso</tab>
+            <resource>Auth0_SSO::auth0_sso</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+
+                <field id="active" translate="label comment" sortOrder="01" type="select" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable Single Sign On</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="client_id" translate="label" type="text" sortOrder="02" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Client ID</label>
+                </field>
+                <field id="client_secret" translate="label" type="text" sortOrder="02" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Client Secret</label>
+                </field>
+
+                <field id="callback_urls" translate="label" type="text" sortOrder="03" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Callback Urls </label>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>
