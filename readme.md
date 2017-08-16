@@ -6,7 +6,7 @@ Facts
 -----
 - version: 0.1.0
 - extension key: DavidUmoh_SSO
-- [extension on GitHub](https://github.com/phronesis/Auth0-SSO)
+- [extension on GitHub](https://github.com/phronesis/Auth0)
 
 
 Description
@@ -29,11 +29,11 @@ Installation Instructions
 "reositories": {
         "davidumoh-auth0-sso": {
             "type": "vcs",
-            "url": "https://github.com/phronesis/Auth0-SSO.git"
+            "url": "https://github.com/phronesis/Auth0.git"
         }
  }
 ```
-2. Run `composer require davidumoh/module-auth0-sso`
+2. Run `composer require davidumoh/module-auth0`
 
 Uninstallation
 --------------
@@ -42,7 +42,7 @@ Uninstallation
 
 Support
 -------
-If you have any issues with this extension, open an issue on [GitHub](https://github.com/phronesis/Auth0-SSO/issues).
+If you have any issues with this extension, open an issue on [GitHub](https://github.com/phronesis/Auth0/issues).
 
 Contribution
 ------------

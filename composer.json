@@ -1,5 +1,5 @@
 {
-    "name": "davidumoh/module-auth0-sso",
+    "name": "davidumoh/module-auth0",
     "description": "This is an extension that adds the ability to log into your Magento application using Auth0",
     "type": "magento2-module",
     "license": [
@@ -20,7 +20,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "DavidUmoh\\Auth0SSO\\": ""
+            "DavidUmoh\\Auth0\\": ""
         }
     }
 }
