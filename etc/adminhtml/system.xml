@@ -15,6 +15,10 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
 
+                <field id="domain" translate="label" type="text" sortOrder="02" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Domain</label>
+                    <comment>Auth0 Domain. eg. is gloong.auth0.com</comment>
+                </field>
                 <field id="client_id" translate="label" type="text" sortOrder="02" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Client ID</label>
                 </field>
@@ -22,8 +26,8 @@
                     <label>Client Secret</label>
                 </field>
 
-                <field id="callback_urls" translate="label" type="text" sortOrder="03" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Callback Urls </label>
+                <field id="callback_url" translate="label" type="text" sortOrder="03" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Callback Url </label>
                 </field>
 
             </group>

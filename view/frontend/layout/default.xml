@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="header.links">
+            <block class="DavidUmoh\Auth0\Block\Auth" name="davidumoh.auth0.auth" template="DavidUmoh_Auth0::auth.phtml" />
+        </referenceBlock>
+    </body>
+</page>
