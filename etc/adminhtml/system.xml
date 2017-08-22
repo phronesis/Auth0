@@ -15,9 +15,9 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
 
-                <field id="domain" translate="label" type="text" sortOrder="02" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Domain</label>
-                    <comment>Auth0 Domain. eg. is gloong.auth0.com</comment>
+                <field id="account" translate="label" type="text" sortOrder="02" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Account</label>
+                    <comment>Auth0 Account. eg. the account for this domain: gloong.auth0.com is gloong</comment>
                 </field>
                 <field id="client_id" translate="label" type="text" sortOrder="02" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Client ID</label>

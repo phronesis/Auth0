@@ -10,7 +10,7 @@ class Config extends AbstractHelper{
     const CLIENT_ID = 'client_id';
     const CLIENT_SECRET = 'client_secret';
     const CALLBACK_URL = 'callback_url';
-    const AUTH0_DOMAIN = 'domain';
+    const AUTH0_ACCOUNT = 'account';
 
     protected function getModuleConfig($path){
         return $this->scopeConfig->getValue(self::CONFIG_PATH.$path);
@@ -37,7 +37,7 @@ class Config extends AbstractHelper{
      * @return string
      */
     public function getDomain(){
-        return $this->getModuleConfig(self::AUTH0_DOMAIN);
+        return 'https://'.$this->getModuleConfig(self::AUTH0_ACCOUNT).'auth0.com';
     }
 
     /**
@@ -46,6 +46,27 @@ class Config extends AbstractHelper{
      */
     public function getCallbackUrl(){
         return $this->getModuleConfig(self::CALLBACK_URL);
+    }
+
+    public function getAccount(){
+        return $this->getModuleConfig(self::AUTH0_ACCOUNT);
+    }
+
+    /**
+     * Returns a class of Config options that can be easily json encoded for use in javascript.
+     * Currently has the following options:
+     * - domain - Auth0 domain
+     * - clientId
+     * - callbackUrl
+     *
+     * @return \stdClass
+     */
+    public function getConfigDataObject(){
+        $config = new \stdClass();
+        $config->domain = $this->getDomain();
+        $config->clientId = $this->getClientId();
+        $config->callbackUrl = $this->getCallbackUrl();
+        return $config;
     }
 
 }

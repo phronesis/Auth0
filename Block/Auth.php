@@ -23,20 +23,11 @@ class Auth extends Template{
     }
 
     /**
-     * Returns a class of Config options that can be easily json encoded for use in javascript.
-     * Currently has the following options:
-     * - domain - Auth0 domain
-     * - clientId
-     * - callbackUrl
-     *
+     * @see Config::getConfigDataObject()
      * @return \stdClass
      */
     public function getConfigData(){
-        $config = new \stdClass();
-        $config->domain = $this->config->getDomain();
-        $config->clientId = $this->config->getClientId();
-        $config->callbackUrl = $this->config->getCallbackUrl();
-        return $config;
+        return $this->config->getConfigDataObject();
     }
 
 }
