@@ -22,12 +22,10 @@ class Index extends Auth0{
                 $this->getAuthClient()->authorize();
             }
             $userDetails = $this->getAuthClient()
-                ->getUserDetails($this->getAccessToken($code));
-
+                ->getResourceOwner($this->getAccessToken($code));
 
         }catch (\Exception $e){
             $this->messageManager->addErrorMessage($e->getMessage());
-
             return $this->pageFactory->create();
         }
     }

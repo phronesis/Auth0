@@ -37,7 +37,7 @@ class Config extends AbstractHelper{
      * @return string
      */
     public function getDomain(){
-        return 'https://'.$this->getModuleConfig(self::AUTH0_ACCOUNT).'auth0.com';
+        return $this->getModuleConfig(self::AUTH0_ACCOUNT).'.auth0.com';
     }
 
     /**
