@@ -24,7 +24,7 @@ class Index extends Auth0{
             $userDetails = $this->getAuthClient()
                 ->getResourceOwner($this->getAccessToken($code));
 
-            $this->authenticate($this->getCustomer($userDetails));
+            return $this->authenticate($this->getCustomer($userDetails));
 
         }catch (\Exception $e){
             $this->messageManager->addErrorMessage($e->getMessage());

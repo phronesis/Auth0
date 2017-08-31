@@ -14,9 +14,11 @@ use DavidUmoh\Auth0\Helper\Config;
 use Gloo\SSO\Controller\Auth;
 use Gloo\SSO\Model\AuthInterface;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
+use Magento\Customer\Model\Account\Redirect;
 use Magento\Customer\Model\Data\Customer;
 use Magento\Customer\Model\CustomerFactory;
 use Magento\Customer\Model\ResourceModel\CustomerRepository;
+use Magento\Customer\Model\Session;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Exception\NoSuchEntityException;
@@ -39,13 +41,14 @@ abstract class Auth0 extends Auth {
         AuthInterface $authModel,
         CustomerFactory $customerFactory,
         CustomerRepository $customerRepository,
+        Session $session,
+        Redirect $redirect,
         Auth0ClientFactory $auth0ClientFactory,
         Config $config,
-
         PageFactory $pageFactory
     )
     {
-        parent::__construct($context,$authModel);
+        parent::__construct($context,$authModel,$session,$redirect);
         $this->auth0ClientFactory = $auth0ClientFactory;
         $this->config = $config;
         $this->pageFactory = $pageFactory;
