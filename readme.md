@@ -22,6 +22,11 @@ Compatibility
 -------------
 - Magento >= 2.0
 
+## Releases
+
+### v0.1.0
+ - First release, users can log into magento using Auth0 as authentication server
+
 Installation Instructions
 -------------------------
 1. Add the repository key to your composer.json:

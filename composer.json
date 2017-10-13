@@ -12,8 +12,8 @@
         }
     ],
     "require": {
-        "riskio/oauth2-auth0": "dev-feature/updateDependency",
-        "gloo/module-sso": "@dev"
+        "riskio/oauth2-auth0": "^2.0",
+        "gloo/module-sso": "@stable"
     },
     "autoload": {
         "files": [
