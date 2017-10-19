@@ -78,7 +78,7 @@ abstract class Auth0 extends Auth {
             $customer->setFirstname($firstName);
             $customer->setLastname($lastName);
         }
-        $customer->setCustomAttribute('gloo_sso_auth0',$resourceOwner->toArray());
+
         return $customer;
     }
 
