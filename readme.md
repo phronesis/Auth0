@@ -28,6 +28,8 @@ Compatibility
  - First release, users can log into magento using Auth0 as authentication server
 ### v0.1.1
   - Removed the use of custom attributes as it was not really used and was causing issues during new installations. Will re-visit custom attributes when the use case becomes strong.
+### 0.1.3
+ - Added option for silent authentication
 
 
 Installation Instructions
