@@ -32,6 +32,7 @@ abstract class Auth0 extends Auth {
     protected $pageFactory;
     protected $customerFactory;
     protected $customerRepository;
+    protected $authorizeParams = [];
 
     public function __construct
     (
@@ -62,6 +63,9 @@ abstract class Auth0 extends Auth {
             'redirectUri'=>$this->config->getCallbackUrl(),
             'account'=>$this->config->getAccount()
         ];
+        if($this->config->getSilentAuth()){
+            $this->authorizeParams['prompt'] = 'none';
+        }
         $this->client = new Auth0Client($options);
     }
 
@@ -78,6 +82,10 @@ abstract class Auth0 extends Auth {
         }
 
         return $customer;
+    }
+
+    protected function getError(){
+        return $this->getRequest()->getParam('error');
     }
 
 
