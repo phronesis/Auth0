@@ -11,6 +11,7 @@ class Config extends AbstractHelper{
     const CLIENT_SECRET = 'client_secret';
     const CALLBACK_URL = 'callback_url';
     const AUTH0_ACCOUNT = 'account';
+    const SILENT_AUTH = 'silent_auth';
 
     protected function getModuleConfig($path){
         return $this->scopeConfig->getValue(self::CONFIG_PATH.$path);
@@ -51,6 +52,9 @@ class Config extends AbstractHelper{
     public function getAccount(){
         return $this->getModuleConfig(self::AUTH0_ACCOUNT);
     }
+    public function getSilentAuth(){
+        return (bool) $this->getModuleConfig(self::SILENT_AUTH);
+    }
 
     /**
      * Returns a class of Config options that can be easily json encoded for use in javascript.
@@ -66,6 +70,7 @@ class Config extends AbstractHelper{
         $config->domain = $this->getDomain();
         $config->clientId = $this->getClientId();
         $config->callbackUrl = $this->getCallbackUrl();
+        $config->silentAuth = $this->getSilentAuth();
         return $config;
     }
 

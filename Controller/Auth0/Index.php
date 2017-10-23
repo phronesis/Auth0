@@ -18,8 +18,12 @@ class Index extends Auth0{
         try{
 
             $code = $this->getAccessCode();
+            $error = $this->getError();
+            if($error && $error === 'login_required'){
+               unset($this->authorizeParams['prompt']);
+            }
             if(is_null($code)){
-                $this->getAuthClient()->authorize();
+                $this->getAuthClient()->authorize($this->authorizeParams);
             }
             $userDetails = $this->getAuthClient()
                 ->getResourceOwner($this->getAccessToken($code));

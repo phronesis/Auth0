@@ -29,6 +29,11 @@
                 <field id="callback_url" translate="label" type="text" sortOrder="03" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Callback Url </label>
                 </field>
+                <field id="silent_auth" translate="label" type="select" sortOrder="03" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Silent Auth </label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Will add 'prompt=none' when redirecting to auth0 for authentication</comment>
+                </field>
 
             </group>
         </section>
