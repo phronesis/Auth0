@@ -31,6 +31,9 @@ Compatibility
 ### 0.1.3
  - Added option for silent authentication
 
+### 0.1.4
+ - Bug fixes
+
 
 Installation Instructions
 -------------------------
