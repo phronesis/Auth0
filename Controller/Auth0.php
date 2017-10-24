@@ -74,11 +74,14 @@ abstract class Auth0 extends Auth {
         try{
             $customer = $this->customerRepository->get($resourceOwner->getEmail()) ;
         }catch (NoSuchEntityException $e){
-            $customer = $this->customerFactory->create();
-            $customer->setEmail($resourceOwner->getEmail());
-            list($firstName,$lastName) = explode(" ",$resourceOwner->getName());
-            $customer->setFirstname($firstName);
-            $customer->setLastname($lastName);
+            $newCustomer = $this->customerFactory->create();
+            $newCustomer->setEmail($resourceOwner->getEmail());
+            $name = explode(" ",$resourceOwner->getName());
+            $firstName = isset($name[0])?$name[0]:"";
+            $lastName = isset($name[1])?$name[1]:"";
+            $newCustomer->setFirstname($firstName);
+            $newCustomer->setLastname($lastName);
+            $customer = $newCustomer->getDataModel();
         }
 
         return $customer;
