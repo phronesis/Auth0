@@ -29,6 +29,13 @@
                 <field id="callback_url" translate="label" type="text" sortOrder="03" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Callback Url </label>
                 </field>
+
+                <field id="group_id" translate="label" type="select" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Customer Group ID</label>
+                    <source_model>Magento\Customer\Model\Config\Source\Group</source_model>
+                    <comment>The Group ID for the Customer</comment>
+                </field>
+
                 <field id="silent_auth" translate="label" type="select" sortOrder="03" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Silent Auth </label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>

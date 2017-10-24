@@ -81,6 +81,7 @@ abstract class Auth0 extends Auth {
             $lastName = isset($name[1])?$name[1]:"";
             $newCustomer->setFirstname($firstName);
             $newCustomer->setLastname($lastName);
+            $newCustomer->setGroupId($this->config->getDefaultGroupID());
             $customer = $newCustomer->getDataModel();
         }
 
