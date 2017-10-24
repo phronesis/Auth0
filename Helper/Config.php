@@ -12,6 +12,7 @@ class Config extends AbstractHelper{
     const CALLBACK_URL = 'callback_url';
     const AUTH0_ACCOUNT = 'account';
     const SILENT_AUTH = 'silent_auth';
+    const AUTH_GROUP_ID = "group_id";
 
     protected function getModuleConfig($path){
         return $this->scopeConfig->getValue(self::CONFIG_PATH.$path);
@@ -39,6 +40,14 @@ class Config extends AbstractHelper{
      */
     public function getDomain(){
         return $this->getModuleConfig(self::AUTH0_ACCOUNT).'.auth0.com';
+    }
+
+    /**
+     * Get Auth0 Group ID
+     * @return string
+     */
+    public function getDefaultGroupID(){
+        return $this->getModuleConfig(self::AUTH_GROUP_ID);
     }
 
     /**

@@ -79,6 +79,8 @@ abstract class Auth0 extends Auth {
             list($firstName,$lastName) = explode(" ",$resourceOwner->getName());
             $customer->setFirstname($firstName);
             $customer->setLastname($lastName);
+            $customer->setGroupId($this->config->getDefaultGroupID());
+
         }
 
         return $customer;
