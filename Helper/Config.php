@@ -13,6 +13,7 @@ class Config extends AbstractHelper{
     const AUTH0_ACCOUNT = 'account';
     const SILENT_AUTH = 'silent_auth';
     const AUTH_GROUP_ID = "group_id";
+    const AUTH_NAME_FORMAT = "name_format";
 
     protected function getModuleConfig($path){
         return $this->scopeConfig->getValue(self::CONFIG_PATH.$path);
@@ -63,6 +64,10 @@ class Config extends AbstractHelper{
     }
     public function getSilentAuth(){
         return (bool) $this->getModuleConfig(self::SILENT_AUTH);
+    }
+
+    public function getNameLocationFormat() {
+        return $this->getModuleConfig(self::AUTH_NAME_FORMAT);
     }
 
     /**
