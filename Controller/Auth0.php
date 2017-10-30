@@ -76,9 +76,8 @@ abstract class Auth0 extends Auth {
         }catch (NoSuchEntityException $e){
             $newCustomer = $this->customerFactory->create();
             $newCustomer->setEmail($resourceOwner->getEmail());
-            $name = explode(" ",$resourceOwner->getName());
-            $firstName = isset($name[0])?$name[0]:"";
-            $lastName = isset($name[1])?$name[1]:"";
+            $name = $this->getName($resourceOwner);
+            list($firstName, $lastName) = explode(" ", $name);
             $newCustomer->setFirstname($firstName);
             $newCustomer->setLastname($lastName);
             $newCustomer->setGroupId($this->config->getDefaultGroupID());
@@ -90,6 +89,22 @@ abstract class Auth0 extends Auth {
 
     protected function getError(){
         return $this->getRequest()->getParam('error');
+    }
+
+    protected function getName(ResourceOwnerInterface $resourceOwner) {
+        $format = $this->config->getNameLocationFormat();
+        $nameFormat = explode(".", $format);
+        if(count($nameFormat) === 1) {
+            return $resourceOwner->toArray()[$nameFormat[0]];
+        }
+        $resources = $resourceOwner->toArray();
+        for ($i = 0; $i < count($nameFormat); $i++) {
+            if(array_key_exists($nameFormat[$i], $resources)) {
+                $resources = $resources[$nameFormat[$i]];
+            }
+        }
+        return $resources;
+
     }
 
 
