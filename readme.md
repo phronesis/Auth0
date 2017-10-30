@@ -33,6 +33,8 @@ Compatibility
 
 ### 0.1.4
  - Bug fixes
+### 0.1.5
+ - Added the functionality to retrieve name from Auth0 user based on a config value. See [Issue #11](https://github.com/phronesis/Auth0/issues/11)
 
 
 Installation Instructions
