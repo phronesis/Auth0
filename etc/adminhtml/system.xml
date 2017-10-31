@@ -42,6 +42,10 @@
                     <comment>Will add 'prompt=none' when redirecting to auth0 for authentication</comment>
                 </field>
 
+                <field id="name_format" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Name Format Location</label>
+                    <comment>To get name from 'name' field, use name. To get name from user_metadata{name} field, use: user_metadata.name</comment>
+                </field>
             </group>
         </section>
     </system>
