@@ -44,7 +44,7 @@
 
                 <field id="name_format" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Name Format Location</label>
-                    <comment>Specifies how to retrieve the name from Auth0</comment>
+                    <comment>To get name from 'name' field, use name. To get name from user_metadata{name} field, use: user_metadata.name</comment>
                 </field>
             </group>
         </section>
