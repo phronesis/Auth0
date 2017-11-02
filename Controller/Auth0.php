@@ -71,6 +71,8 @@ abstract class Auth0 extends Auth {
 
     protected function getCustomer(ResourceOwnerInterface $resourceOwner){
 
+        //After logging in or Creating a new USER, redirect to the appropriate location
+        $this->setRedirectURL();
         try{
             $customer = $this->customerRepository->get($resourceOwner->getEmail()) ;
         }catch (NoSuchEntityException $e){
@@ -107,5 +109,11 @@ abstract class Auth0 extends Auth {
 
     }
 
+    protected function setRedirectURL() {
+        $redirectURL = $this->config->getSuccessLoginRedirectURL();
+        if(!empty($redirectURL)) {
+            $this->redirectUrl = $redirectURL;
+        }
+    }
 
 }

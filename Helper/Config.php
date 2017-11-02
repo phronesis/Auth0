@@ -14,6 +14,7 @@ class Config extends AbstractHelper{
     const SILENT_AUTH = 'silent_auth';
     const AUTH_GROUP_ID = "group_id";
     const AUTH_NAME_FORMAT = "name_format";
+    const AUTH_REDIRECT_URL_LOGIN = "redirect_url_after_login";
 
     protected function getModuleConfig($path){
         return $this->scopeConfig->getValue(self::CONFIG_PATH.$path);
@@ -69,6 +70,12 @@ class Config extends AbstractHelper{
     public function getNameLocationFormat() {
         return $this->getModuleConfig(self::AUTH_NAME_FORMAT);
     }
+
+    public function getSuccessLoginRedirectURL() {
+        return $this->getModuleConfig(self::AUTH_REDIRECT_URL_LOGIN);
+    }
+
+
 
     /**
      * Returns a class of Config options that can be easily json encoded for use in javascript.
