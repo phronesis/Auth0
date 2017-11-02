@@ -40,6 +40,9 @@ Compatibility
 ### 0.1.7
  - Bug fixes
 
+### 0.2.0
+ - Implemented ability to specify login redirect url
+
 Installation Instructions
 -------------------------
 1. Add the repository key to your composer.json:

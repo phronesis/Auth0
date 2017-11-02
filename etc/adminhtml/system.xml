@@ -46,6 +46,11 @@
                     <label>Name Format Location</label>
                     <comment>To get name from 'name' field, use name. To get name from user_metadata{name} field, use: user_metadata.name</comment>
                 </field>
+
+                <field id="redirect_url_after_login" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Redirect URL after Login</label>
+                    <comment>What URL should Magento redirect to after successful login?</comment>
+                </field>
             </group>
         </section>
     </system>
