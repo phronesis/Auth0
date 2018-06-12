@@ -47,7 +47,7 @@ Installation Instructions
 -------------------------
 1. Add the repository key to your composer.json:
 ```
-"reositories": {
+"repositories": {
         "davidumoh-auth0-sso": {
             "type": "vcs",
             "url": "https://github.com/phronesis/Auth0.git"
