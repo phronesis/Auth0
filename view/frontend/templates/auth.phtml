@@ -13,7 +13,8 @@
         $(function(){
             var config = auth0Config;
             
-            var myLock = new lock(config.clientId,
+            var myLock = new lock(
+                config.clientId,
                 config.domain, {
                     auth: {
                         redirectUrl: config.callbackUrl,
