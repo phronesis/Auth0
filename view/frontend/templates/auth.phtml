@@ -13,10 +13,7 @@
         $(function(){
             var config = auth0Config;
             
-            
-        
-            var lock = new lock(
-                config.clientId,
+            var myLock = new lock(config.clientId,
                 config.domain, {
                     auth: {
                         redirectUrl: config.callbackUrl,
@@ -25,16 +22,14 @@
                             scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
                         }
                     }
-                });  
+                });
 
+                
          $('li.authorization-link > a, ul.header.links > li > a').click(function(e) {
 
              e.preventDefault();
-             lock.show();
+             myLock.show();
          });
-
-
-
 
      });
  });
