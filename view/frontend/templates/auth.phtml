@@ -8,31 +8,29 @@
     var auth0Config =<?php echo json_encode($block->getConfigData()); ?>;
 
 
-    require(['jquery'],function($){
+    require(['jquery','auth0Lock'],function($,lock){
 
         $(function(){
             var config = auth0Config;
-
-            var lock = new Auth0Lock(
+            
+            var myLock = new lock(
                 config.clientId,
                 config.domain, {
                     auth: {
                         redirectUrl: config.callbackUrl,
                         responseType: 'code',
                         params: {
-                            scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
+                            scope: 'openid email profile' // Learn about scopes: https://auth0.com/docs/scopes
                         }
                     }
                 });
 
+                
          $('li.authorization-link > a, ul.header.links > li > a').click(function(e) {
 
              e.preventDefault();
-             lock.show();
+             myLock.show();
          });
-
-
-
 
      });
  });
