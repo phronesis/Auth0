@@ -6,7 +6,7 @@
 <script >
     'use strict';
     var auth0Config =<?php echo json_encode($block->getConfigData()); ?>;
-
+    var oAuthScope = auth0Config.scope?auth0Config.scope: 'openid email profile'
 
     require(['jquery','auth0Lock'],function($,lock){
 
@@ -20,7 +20,7 @@
                         redirectUrl: config.callbackUrl,
                         responseType: 'code',
                         params: {
-                            scope: 'openid email profile' // Learn about scopes: https://auth0.com/docs/scopes
+                            scope:oAuthScope// Learn about scopes: https://auth0.com/docs/scopes
                         }
                     }
                 });
