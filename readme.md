@@ -4,8 +4,8 @@ This is a Magento2 extension that adds the ability to log into your Magento inst
 
 Facts
 -----
-- version: 0.1.0
-- extension key: DavidUmoh_SSO
+- version: 0.3.0
+- extension key: DavidUmoh_Auth0
 - [extension on GitHub](https://github.com/phronesis/Auth0)
 
 
@@ -43,22 +43,20 @@ Compatibility
 ### 0.2.0
  - Implemented ability to specify login redirect url
 
+### 0.3.0
+ - Updated dependencies to work with magento 2.2.x 
+ - Updated Auth0Lock to v11
+ - Implemented Scopes as Config Option. See [Issue #1](https://github.com/phronesis/Auth0/issues/1)
+ - Implemented Selector for link that triggers modal as a config option. See [Issue #2](https://github.com/phronesis/Auth0/issues/2)
+
 Installation Instructions
 -------------------------
-1. Add the repository key to your composer.json:
-```
-"reositories": {
-        "davidumoh-auth0-sso": {
-            "type": "vcs",
-            "url": "https://github.com/phronesis/Auth0.git"
-        }
- }
-```
-2. Run `composer require davidumoh/module-auth0`
+
+Run `composer require davidumoh/module-auth0`
 
 Uninstallation
 --------------
-1. Remove all extension files from your Magento installation
+Remove all extension files from your Magento installation
 
 
 Support
@@ -81,4 +79,4 @@ Licence
 
 Copyright
 ---------
-(c) 2017 David Umoh
+(c) 2018 David Umoh
