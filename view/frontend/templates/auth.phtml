@@ -6,7 +6,8 @@
 <script >
     'use strict';
     var auth0Config =<?php echo json_encode($block->getConfigData()); ?>;
-
+    var oAuthScope = auth0Config.scope?auth0Config.scope: 'openid email profile';
+    var linkSelector = auth0Config.linkSelector?auth0Config.linkSelector:null;
 
     require(['jquery','auth0Lock'],function($,lock){
 
@@ -20,17 +21,19 @@
                         redirectUrl: config.callbackUrl,
                         responseType: 'code',
                         params: {
-                            scope: 'openid email profile' // Learn about scopes: https://auth0.com/docs/scopes
+                            scope:oAuthScope// Learn about scopes: https://auth0.com/docs/scopes
                         }
                     }
                 });
 
-                
-         $('li.authorization-link > a, ul.header.links > li > a').click(function(e) {
+         if(linkSelector){
+            $(linkSelector).click(function(e) {
 
-             e.preventDefault();
-             myLock.show();
-         });
+                e.preventDefault();
+                myLock.show();
+            });
+         }       
+         
 
      });
  });
