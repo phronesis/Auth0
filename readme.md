@@ -57,17 +57,6 @@ Compatibility
 
 Installation Instructions
 -------------------------
-1. Add the repository key to your composer.json:
-```
-"repositories": {
-        "davidumoh-auth0-sso": {
-            "type": "vcs",
-            "url": "https://github.com/phronesis/Auth0.git"
-        }
- }
-```
-2. Run `composer require davidumoh/module-auth0`
-=======
 
 Run `composer require davidumoh/module-auth0`
 
