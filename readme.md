@@ -4,7 +4,7 @@ This is a Magento2 extension that adds the ability to log into your Magento inst
 
 Facts
 -----
-- version: 0.3.1
+- version: 0.3.2
 - extension key: DavidUmoh_Auth0
 - [extension on GitHub](https://github.com/phronesis/Auth0)
 
@@ -52,9 +52,11 @@ Compatibility
 ### 0.3.1
  - Bug fix
 
+### 0.3.2
+ - Minor fixes
+
 Installation Instructions
 -------------------------
-<<<<<<< HEAD
 1. Add the repository key to your composer.json:
 ```
 "repositories": {
@@ -68,7 +70,6 @@ Installation Instructions
 =======
 
 Run `composer require davidumoh/module-auth0`
->>>>>>> release/0.3.0
 
 Uninstallation
 --------------
