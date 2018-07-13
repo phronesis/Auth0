@@ -4,7 +4,7 @@ This is a Magento2 extension that adds the ability to log into your Magento inst
 
 Facts
 -----
-- version: 0.3.0
+- version: 0.3.1
 - extension key: DavidUmoh_Auth0
 - [extension on GitHub](https://github.com/phronesis/Auth0)
 
@@ -48,6 +48,9 @@ Compatibility
  - Updated Auth0Lock to v11
  - Implemented Scopes as Config Option. See [Issue #1](https://github.com/phronesis/Auth0/issues/1)
  - Implemented Selector for link that triggers modal as a config option. See [Issue #2](https://github.com/phronesis/Auth0/issues/2)
+
+### 0.3.1
+ - Bug fix
 
 Installation Instructions
 -------------------------
