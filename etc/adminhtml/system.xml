@@ -47,6 +47,15 @@
                     <comment>To get name from 'name' field, use name. To get name from user_metadata{name} field, use: user_metadata.name</comment>
                 </field>
 
+                <field id="oauth_scope" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Scope</label>
+                    <comment>Provide a space separated list of scope. Leave empty for default scope of "openid email profile" to apply. To add yours include the default in the list.</comment>
+                </field>
+                <field id="link_selector" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Link Selector</label>
+                    <comment>Selector for the links that, when clicked, Auth0 Login Modal will popup </comment>
+                </field>
+
                 <field id="redirect_url_after_login" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Redirect URL after Login</label>
                     <comment>What URL should Magento redirect to after successful login?</comment>

@@ -14,6 +14,8 @@ class Config extends AbstractHelper{
     const SILENT_AUTH = 'silent_auth';
     const AUTH_GROUP_ID = "group_id";
     const AUTH_NAME_FORMAT = "name_format";
+    const OAUTH_SCOPE = "oauth_scope";
+    const LINK_SELECTOR = "link_selector";
     const AUTH_REDIRECT_URL_LOGIN = "redirect_url_after_login";
 
     protected function getModuleConfig($path){
@@ -75,6 +77,14 @@ class Config extends AbstractHelper{
         return $this->getModuleConfig(self::AUTH_REDIRECT_URL_LOGIN);
     }
 
+    public function getScope() {
+        return $this->getModuleConfig(self::OAUTH_SCOPE);
+    }
+
+    public function getLinkSelector() {
+        return $this->getModuleConfig(self::LINK_SELECTOR);
+    }
+
 
 
     /**
@@ -83,6 +93,8 @@ class Config extends AbstractHelper{
      * - domain - Auth0 domain
      * - clientId
      * - callbackUrl
+     * - silentAuth
+     * - sope
      *
      * @return \stdClass
      */
@@ -92,6 +104,8 @@ class Config extends AbstractHelper{
         $config->clientId = $this->getClientId();
         $config->callbackUrl = $this->getCallbackUrl();
         $config->silentAuth = $this->getSilentAuth();
+        $config->scope = $this->getScope();
+        $config->linkSelector = $this->getLinkSelector();
         return $config;
     }
 

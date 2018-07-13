@@ -1,3 +1,12 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <auth0_sso_config>
+            <general>
+                <name_format>name</name_format>
+                <oauth_scope>openid email profile</oauth_scope>
+                <link_selector>li.authorization-link > a, ul.header.links > li > a</link_selector>
+            </general>
+        </auth0_sso_config>
+    </default>
 </config>

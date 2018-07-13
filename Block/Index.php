@@ -32,7 +32,7 @@ class Index extends Template{
         parent::__construct($context, $data);
         $this->auth0Client = $auth0Client;
         $this->config = $config;
-        $this->initClient();
+        //$this->initClient();
     }
 
 
