@@ -14,6 +14,7 @@ class Config extends AbstractHelper{
     const SILENT_AUTH = 'silent_auth';
     const AUTH_GROUP_ID = "group_id";
     const AUTH_NAME_FORMAT = "name_format";
+    const AUTH_EMAIL_FORMAT = "email_format";
     const OAUTH_SCOPE = "oauth_scope";
     const LINK_SELECTOR = "link_selector";
     const AUTH_REDIRECT_URL_LOGIN = "redirect_url_after_login";
@@ -71,6 +72,10 @@ class Config extends AbstractHelper{
 
     public function getNameLocationFormat() {
         return $this->getModuleConfig(self::AUTH_NAME_FORMAT);
+    }
+    
+    public function getEmailLocationFormat() {
+        return $this->getModuleConfig(self::AUTH_EMAIL_FORMAT);
     }
 
     public function getSuccessLoginRedirectURL() {

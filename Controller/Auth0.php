@@ -94,19 +94,27 @@ abstract class Auth0 extends Auth {
     }
 
     protected function getName(ResourceOwnerInterface $resourceOwner) {
-        $format = $this->config->getNameLocationFormat();
-        $nameFormat = explode(".", $format);
-        if(count($nameFormat) === 1) {
-            return $resourceOwner->toArray()[$nameFormat[0]];
+        $configValue = $this->config->getNameLocationFormat();
+        return $this->getResourceValueByDotNotation($resourceOwner,$configValue);
+    }
+
+    protected function getEmail(ResourceOwnerInterface $resourceOwner){
+        $configValue = $this->config->getEmailLocationFormat();
+        return $this->getResourceValueByDotNotation($resourceOwner,$configValue);
+    }
+
+    protected function getResourceValueByDotNotation($resourceOwner, $configValue){
+        $format = explode(".", $configValue);
+        if(count($format) === 1) {
+            return $resourceOwner->toArray()[$format[0]];
         }
         $resources = $resourceOwner->toArray();
-        for ($i = 0; $i < count($nameFormat); $i++) {
-            if(array_key_exists($nameFormat[$i], $resources)) {
-                $resources = $resources[$nameFormat[$i]];
+        for ($i = 0; $i < count($format); $i++) {
+            if(array_key_exists($format[$i], $resources)) {
+                $resources = $resources[$format[$i]];
             }
         }
         return $resources;
-
     }
 
     protected function setRedirectURL() {
