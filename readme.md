@@ -58,6 +58,9 @@ Compatibility
 ### 0.3.3
  - Updated readme
 
+### 0.4.0
+ - Implemented checks for state See [Issue #3](https://github.com/phronesis/Auth0/issues/3)
+
 Installation Instructions
 -------------------------
 
