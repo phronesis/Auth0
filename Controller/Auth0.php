@@ -74,10 +74,11 @@ abstract class Auth0 extends Auth {
         //After logging in or Creating a new USER, redirect to the appropriate location
         $this->setRedirectURL();
         try{
-            $customer = $this->customerRepository->get($resourceOwner->getEmail()) ;
+            $email = $this->getEmail($resourceOwner);
+            $customer = $this->customerRepository->get($email) ;
         }catch (NoSuchEntityException $e){
             $newCustomer = $this->customerFactory->create();
-            $newCustomer->setEmail($resourceOwner->getEmail());
+            $newCustomer->setEmail($email);
             $name = $this->getName($resourceOwner);
             list($firstName, $lastName) = explode(" ", $name);
             $newCustomer->setFirstname($firstName);
@@ -104,11 +105,13 @@ abstract class Auth0 extends Auth {
     }
 
     protected function getResourceValueByDotNotation($resourceOwner, $configValue){
-        $format = explode(".", $configValue);
+        $format = explode("#", $configValue);
         if(count($format) === 1) {
             return $resourceOwner->toArray()[$format[0]];
         }
+        
         $resources = $resourceOwner->toArray();
+        
         for ($i = 0; $i < count($format); $i++) {
             if(array_key_exists($format[$i], $resources)) {
                 $resources = $resources[$format[$i]];

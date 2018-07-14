@@ -44,7 +44,12 @@
 
                 <field id="name_format" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Name Format Location</label>
-                    <comment>To get name from 'name' field, use name. To get name from user_metadata{name} field, use: user_metadata.name</comment>
+                    <comment>To get name from 'name' field, use name. To get name from user_metadata{name} field, use: user_metadata#name</comment>
+                </field>
+
+                <field id="email_format" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Email Format Location</label>
+                    <comment>To get name 'email' field, use name. To get name from user_metadata{name} field, use: user_metadata#name</comment>
                 </field>
 
                 <field id="oauth_scope" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="0">
