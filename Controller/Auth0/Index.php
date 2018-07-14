@@ -23,7 +23,11 @@ class Index extends Auth0{
                unset($this->authorizeParams['prompt']);
             }
             if(is_null($code)){
+                $this->authorizeParams['state'] = $this->initState();
                 $this->getAuthClient()->authorize($this->authorizeParams);
+            }
+            if(!$this->isStateValid()){
+                throw new \Exception('State is Invalid');
             }
             $userDetails = $this->getAuthClient()
                 ->getResourceOwner($this->getAccessToken($code));

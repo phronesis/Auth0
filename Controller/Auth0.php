@@ -127,4 +127,26 @@ abstract class Auth0 extends Auth {
         }
     }
 
+    protected function initState(){
+        $state = $this->generateRandomString();
+        $this->session->setAuth0State($state);
+        return $state;
+    }
+
+    protected function generateRandomString(){
+       return bin2hex(random_bytes(16));
+    }
+
+    public function getStoredState(){
+        return $this->session->getAuth0State();
+    }
+
+    public function isStateValid(){
+        return strcmp($this->getStateFromRequest(),$this->getStoredState()) === 0;
+    }
+
+    public function getStateFromRequest(){
+        return $this->getRequest()->getParam('state');
+    }
+
 }
